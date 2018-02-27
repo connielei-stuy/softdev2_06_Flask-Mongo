@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  </head>
+  <body>
+    {% if not info %}
+    Select a complaint for more info!
+    <br>
+    <select name="name" form="complaints">
+      {% for o in options %}
+      <option value="{{o}}">{{o}}</option>
+      {% endfor %}
+    </select>
+    <form method="POST" action="/" id="complaints">
+      <input type="submit" value="Submit">
+    </form>
+    {% endif %}
+    {{ info | safe}}
+  </body>
+</html>
